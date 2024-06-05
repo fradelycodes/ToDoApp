@@ -65,7 +65,7 @@ const App = () => {
 
 	return (
 		<div className="app-container">
-			<h1>Todo List</h1>
+			<h1 className="mainHeading">Todo List</h1>
 			<TodoForm addTodo={addTodo} />
 			<TodoList
 				todos={todos}

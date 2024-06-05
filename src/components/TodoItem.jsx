@@ -51,6 +51,7 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo, editTodo, todos }) => {
 					onKeyPress={handleKeyPress}
 					id={`edit-input-${todo.id}`}
 					data-tip="Task already exists"
+					className="editInput"
 				/>
 			) : (
 				<span
