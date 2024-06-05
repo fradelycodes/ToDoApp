@@ -36,6 +36,7 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo, editTodo, todos }) => {
 		<div className="todo-item">
 			<input
 				type="checkbox"
+				className="checkBoxes"
 				checked={todo.completed}
 				onChange={() => toggleComplete(todo.id)}
 			/>
@@ -50,6 +51,7 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo, editTodo, todos }) => {
 				/>
 			) : (
 				<span
+					className="verticalLine"
 					style={{ textDecoration: todo.completed ? "line-through" : "none" }}
 				>
 					{todo.text}

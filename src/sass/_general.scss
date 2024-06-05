@@ -4,6 +4,7 @@ $background-color: #b1c4c6;
 $error-color: #ff6b6b;
 $error-color-hover: #ff4c4c;
 $warning-color: #ffbb33;
+$black: #2c2c2c;
 * {
 	margin: 0;
 	padding: 0;
@@ -21,4 +22,9 @@ $warning-color: #ffbb33;
 	margin-right: 10px;
 	border-radius: 4px;
 	cursor: pointer;
+}
+
+@mixin spaceBetween {
+	display: flex;
+	justify-content: space-between;
 }

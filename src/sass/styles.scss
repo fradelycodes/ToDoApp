@@ -1,19 +1,17 @@
 @import "_general";
 
-body {
-	margin: 0;
-}
 .app-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	font-family: "Poppins", sans-serif;
 	padding: 20px;
 	background: $background-color;
 	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 
 	h1 {
-		color: $primary-color;
+		color: $black;
+		margin: 50px 0px;
 	}
 }
 
@@ -25,71 +23,72 @@ body {
 	background: #f9f9f9;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-.todo-item {
-	.todo-item input[type="text"] {
-		flex: 1;
-		padding: 5px;
-		width: 100%;
-		border: 1px solid #ce5555;
-		border-radius: 10px;
-		margin-right: 10px;
-	}
-
-	.todo-item button {
-		margin-left: 10px;
-	}
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 25px;
-	border-bottom: 2px dashed #d6831d;
-	&:last-child {
-		border-bottom: none;
-	}
-
-	input[type="checkbox"] {
-		margin-right: 10px;
-		border-radius: 50px;
-		background-color: red;
-	}
-
-	span {
-		flex: 1;
-		text-decoration: line-through;
-	}
-
-	.editBtn {
-		background: $warning-color;
-		color: white;
-		@include btns;
-		&:hover {
-			background: $error-color-hover;
+	.todo-item {
+		@include spaceBetween;
+		align-items: center;
+		padding: 25px;
+		border-bottom: 2px dashed #d6831d;
+		input[type="text"] {
+			flex: 1;
+			padding: 5px;
+			border: 1px solid #ce5555;
+			border-radius: 10px;
+			margin-right: 10px;
 		}
-	}
 
-	.deleteBtn {
-		background: $error-color;
-		color: white;
-		@include btns;
-		&:hover {
-			background: $error-color-hover;
+		// .todo-item button {
+		// 	margin-left: 10px;
+		// }
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		input.checkBoxes {
+			margin-right: 10px;
+			border-radius: 50px;
+			background-color: #be2e2e;
+			padding: 20px;
+		}
+
+		.verticalLine {
+			flex: 1;
+			text-decoration: line-through;
+		}
+
+		.editBtn {
+			background: $warning-color;
+			color: white;
+			@include btns;
+			&:hover {
+				background: darken($warning-color, 10%);
+			}
+		}
+
+		.deleteBtn {
+			background: $error-color;
+			color: white;
+			@include btns;
+			&:hover {
+				background: $error-color-hover;
+			}
 		}
 	}
 }
 
 .todo-form {
-	display: flex;
-	justify-content: space-between;
+	@include spaceBetween;
 	margin-bottom: 20px;
 
 	input[type="text"] {
-		flex: 1;
-		padding: 10px;
+		// flex: 1;
+		padding: 12px;
 		border: 1px solid #ddd;
-		border-radius: 4px;
-		margin-right: 10px;
+		outline: none;
+		box-shadow: inset;
+		border-radius: 6px 0 0 6px;
+		width: 800px;
 	}
 
 	button {
@@ -97,9 +96,10 @@ body {
 		background: $secondary-color;
 		border: none;
 		color: white;
-		border-radius: 4px;
+		padding: 12px;
+		width: 120px;
+		border-radius: 0 6px 6px 0;
 		cursor: pointer;
-
 		&:hover {
 			background: darken($secondary-color, 10%);
 		}
@@ -107,7 +107,6 @@ body {
 }
 #add-todo-button {
 	position: fixed;
-	bottom: 20px;
 	right: 20px;
 	width: 50px;
 	height: 50px;
