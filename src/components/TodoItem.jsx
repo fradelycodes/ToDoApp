@@ -34,11 +34,15 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo, editTodo, todos }) => {
 
 	return (
 		<div className="todo-item">
-			<input
-				type="checkbox"
-				checked={todo.completed}
-				onChange={() => toggleComplete(todo.id)}
-			/>
+			<label className="checkContainer">
+				<input
+					type="checkbox"
+					className="checkBoxes"
+					checked={todo.completed}
+					onChange={() => toggleComplete(todo.id)}
+				/>
+				<span className="checkmark"></span>
+			</label>
 			{isEditing ? (
 				<input
 					type="text"
@@ -47,16 +51,22 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo, editTodo, todos }) => {
 					onKeyPress={handleKeyPress}
 					id={`edit-input-${todo.id}`}
 					data-tip="Task already exists"
+					className="editInput"
 				/>
 			) : (
 				<span
+					className="verticalLine"
 					style={{ textDecoration: todo.completed ? "line-through" : "none" }}
 				>
 					{todo.text}
 				</span>
 			)}
-			<button onClick={handleEdit}>{isEditing ? "Save" : "Edit"}</button>
-			<button onClick={() => deleteTodo(todo.id)}>Delete</button>
+			<button className="editBtn" onClick={handleEdit}>
+				{isEditing ? "Save" : "Edit"}
+			</button>
+			<button className="deleteBtn" onClick={() => deleteTodo(todo.id)}>
+				Delete
+			</button>
 			<ReactTooltip />
 		</div>
 	)
