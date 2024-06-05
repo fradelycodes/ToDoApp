@@ -34,12 +34,15 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo, editTodo, todos }) => {
 
 	return (
 		<div className="todo-item">
-			<input
-				type="checkbox"
-				className="checkBoxes"
-				checked={todo.completed}
-				onChange={() => toggleComplete(todo.id)}
-			/>
+			<label className="checkContainer">
+				<input
+					type="checkbox"
+					className="checkBoxes"
+					checked={todo.completed}
+					onChange={() => toggleComplete(todo.id)}
+				/>
+				<span className="checkmark"></span>
+			</label>
 			{isEditing ? (
 				<input
 					type="text"

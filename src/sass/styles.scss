@@ -37,19 +37,42 @@
 			margin-right: 10px;
 		}
 
-		// .todo-item button {
-		// 	margin-left: 10px;
-		// }
-
 		&:last-child {
 			border-bottom: none;
 		}
-
-		input.checkBoxes {
-			margin-right: 10px;
-			border-radius: 50px;
-			background-color: #be2e2e;
-			padding: 20px;
+		.checkContainer {
+			display: block;
+			position: relative;
+			padding-left: 35px;
+			margin-bottom: 12px;
+			cursor: pointer;
+			font-size: 22px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			.checkBoxes {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 0;
+				width: 0;
+			}
+			.checkmark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 25px;
+				width: 25px;
+				background-color: #eee;
+				border-radius: 20px;
+			}
+			&:hover input ~ .checkmark {
+				background-color: #ccc;
+			}
+			& input:checked ~ .checkmark {
+				background-color: $secondary-color;
+			}
 		}
 
 		.verticalLine {
@@ -58,18 +81,16 @@
 		}
 
 		.editBtn {
-			background: $warning-color;
-			color: white;
 			@include btns;
+			background: $warning-color;
 			&:hover {
 				background: darken($warning-color, 10%);
 			}
 		}
 
 		.deleteBtn {
-			background: $error-color;
-			color: white;
 			@include btns;
+			background: $error-color;
 			&:hover {
 				background: $error-color-hover;
 			}
@@ -79,10 +100,8 @@
 
 .todo-form {
 	@include spaceBetween;
-	margin-bottom: 20px;
-
-	input[type="text"] {
-		// flex: 1;
+	margin-bottom: 25px;
+	.todoInput {
 		padding: 12px;
 		border: 1px solid #ddd;
 		outline: none;
@@ -91,12 +110,11 @@
 		width: 800px;
 	}
 
-	button {
-		padding: 10px;
+	.submitBtn {
+		padding: 12px;
 		background: $secondary-color;
 		border: none;
 		color: white;
-		padding: 12px;
 		width: 120px;
 		border-radius: 0 6px 6px 0;
 		cursor: pointer;
@@ -116,8 +134,7 @@
 	border: none;
 	font-size: 24px;
 	cursor: pointer;
-}
-
-#add-todo-button:hover {
-	background-color: darken($secondary-color, 10%);
+	&:hover {
+		background-color: darken($secondary-color, 10%);
+	}
 }
