@@ -6,10 +6,10 @@ import "./sass/_general.scss"
 
 const App = () => {
 	const [todos, setTodos] = useState([
-		{ id: 1, text: "Learn React", completed: false },
-		{ id: 2, text: "Build a Todo App", completed: false },
-		{ id: 3, text: "Learn SCSS", completed: false },
-		{ id: 4, text: "Practice JavaScript", completed: false },
+		{ id: 1, text: "Buy Onions", completed: false },
+		{ id: 2, text: "Go For a Walk", completed: false },
+		{ id: 3, text: "Homework", completed: false },
+		{ id: 4, text: "Test The App", completed: false },
 		{ id: 5, text: "Read a book", completed: false },
 	])
 	const [tooltipMessage, setTooltipMessage] = useState("")
