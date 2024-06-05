@@ -1,13 +1,28 @@
-$primary-color: #00796b;
-$secondary-color: #4caf50;
-$background-color: #b1c4c6;
-$error-color: #ff6b6b;
+$primary-color: #11af9d;
+$secondary-color: #17811b;
+$background-color: #e1e6e7;
+$error-color: #a81106;
 $error-color-hover: #ff4c4c;
 $warning-color: #ffbb33;
 $black: #2c2c2c;
+
+// FONTS
+$font-family: "Poppins", sans-serif;
+$font-size: 16px;
+
 * {
 	margin: 0;
 	padding: 0;
+	font-size: $font-size;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+}
+button {
+	font-family: $font-family;
+	font-weight: 400;
 }
 
 @font-face {
@@ -19,10 +34,11 @@ $black: #2c2c2c;
 	color: white;
 	border: none;
 	width: 80px;
-	padding: 5px 10px;
-	margin-right: 10px;
+	padding: 10px 15px;
+	margin-right: 12px;
 	border-radius: 4px;
 	cursor: pointer;
+	font-weight: 600;
 }
 
 @mixin spaceBetween {
