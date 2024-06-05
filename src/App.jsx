@@ -2,6 +2,7 @@ import { useState } from "react"
 import TodoList from "./components/TodoList"
 import TodoForm from "./components/TodoForm"
 import ReactTooltip from "react-tooltip"
+import "./sass/_general.scss"
 
 const App = () => {
 	const [todos, setTodos] = useState([

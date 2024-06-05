@@ -1,14 +1,10 @@
-$primary-color: #00796b;
-$secondary-color: #4caf50;
-$background-color: #b1c4c6;
-$error-color: #ff6b6b;
-$error-color-hover: #ff4c4c;
+@import "_general";
 
 body {
 	margin: 0;
 }
 .app-container {
-	font-family: Arial, sans-serif;
+	font-family: "Poppins", sans-serif;
 	padding: 20px;
 	background: $background-color;
 	min-height: 100vh;
@@ -22,7 +18,8 @@ body {
 }
 
 .todo-list-container {
-	max-width: 600px;
+	width: 1000px;
+	border: 1px solid green;
 	margin: 0 auto;
 	padding: 20px;
 	background: #f9f9f9;
@@ -34,26 +31,28 @@ body {
 	.todo-item input[type="text"] {
 		flex: 1;
 		padding: 5px;
-		border: 1px solid #ddd;
-		border-radius: 4px;
+		width: 100%;
+		border: 1px solid #ce5555;
+		border-radius: 10px;
 		margin-right: 10px;
 	}
 
 	.todo-item button {
-		margin-left: 5px;
+		margin-left: 10px;
 	}
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 10px;
-	border-bottom: 1px solid #ddd;
-
+	padding: 25px;
+	border-bottom: 2px dashed #d6831d;
 	&:last-child {
 		border-bottom: none;
 	}
 
 	input[type="checkbox"] {
 		margin-right: 10px;
+		border-radius: 50px;
+		background-color: red;
 	}
 
 	span {
@@ -61,14 +60,19 @@ body {
 		text-decoration: line-through;
 	}
 
-	button {
-		background: $error-color;
-		border: none;
+	.editBtn {
+		background: $warning-color;
 		color: white;
-		padding: 5px 10px;
-		border-radius: 4px;
-		cursor: pointer;
+		@include btns;
+		&:hover {
+			background: $error-color-hover;
+		}
+	}
 
+	.deleteBtn {
+		background: $error-color;
+		color: white;
+		@include btns;
 		&:hover {
 			background: $error-color-hover;
 		}

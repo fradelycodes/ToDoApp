@@ -55,8 +55,12 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo, editTodo, todos }) => {
 					{todo.text}
 				</span>
 			)}
-			<button onClick={handleEdit}>{isEditing ? "Save" : "Edit"}</button>
-			<button onClick={() => deleteTodo(todo.id)}>Delete</button>
+			<button className="editBtn" onClick={handleEdit}>
+				{isEditing ? "Save" : "Edit"}
+			</button>
+			<button className="deleteBtn" onClick={() => deleteTodo(todo.id)}>
+				Delete
+			</button>
 			<ReactTooltip />
 		</div>
 	)
